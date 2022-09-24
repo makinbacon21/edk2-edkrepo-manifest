@@ -29,11 +29,11 @@
 
   <RemoteList>
     <!-- The 'name' attribute for each Remote tag must be unique. -->
-    <Remote name="Edk2Repo">https://github.com/NVIDIA/edk2.git</Remote>
-    <Remote name="Edk2PlatformsRepo">https://github.com/NVIDIA/edk2-platforms.git</Remote>
-    <Remote name="Edk2NonOsiRepo">https://github.com/NVIDIA/edk2-non-osi.git</Remote>
-    <Remote name="Edk2NvidiaRepo">https://github.com/NVIDIA/edk2-nvidia.git</Remote>
-    <Remote name="Edk2NvidiaNonOsiRepo">https://github.com/NVIDIA/edk2-nvidia-non-osi.git</Remote>
+    <Remote name="Edk2Repo">https://gitlab.incom.co/CM-Shield/android_bootable_tianocore_edk2.git</Remote>
+    <Remote name="Edk2PlatformsRepo">https://gitlab.incom.co/CM-Shield/android_bootable_tianocore_edk2-nvidia-non-osi.git</Remote>
+    <Remote name="Edk2NonOsiRepo">https://gitlab.incom.co/CM-Shield/android_bootable_tianocore_edk2-non-osi.git</Remote>
+    <Remote name="Edk2NvidiaRepo">https://gitlab.incom.co/CM-Shield/android_bootable_tianocore_edk2-nvidia.git</Remote>
+    <Remote name="Edk2NvidiaNonOsiRepo">https://gitlab.incom.co/CM-Shield/android_bootable_tianocore_edk2-nvidia-non-osi.git</Remote>
   </RemoteList>
 
   <ClientGitHookList>
@@ -46,49 +46,22 @@
   </SubmoduleAlternateRemotes>
 
   <CombinationList>
-    <Combination name="main" description="The main codeline">
-      <Source localRoot="edk2" remote="Edk2Repo" branch="main-edk2-stable202205" enableSubmodule="true" />
-      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" branch="main-upstream-20220404"/>
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="main-upstream-20220228" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="main"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="main"/>
+    <!-- lineage-19.1 -->
+    <Combination name="lineage-19.1" description="The LineageOS 19.1 codeline">
+      <Source localRoot="edk2" remote="Edk2Repo" branch="lineage-19.1" enableSubmodule="true" />
+      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" branch="lineage-19.1"/>
+      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="lineage-19.1" sparseCheckout="true" />
+      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="lineage-19.1"/>
+      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="lineage-19.1"/>
     </Combination>
 
-    <!-- rel-34 -->
-    <Combination name="rel-34" description="The rel-34 codeline">
-      <Source localRoot="edk2" remote="Edk2Repo" branch="rel-34-edk2-stable202111" enableSubmodule="true" />
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="rel-34-upstream-20210901" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="rel-34"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="rel-34"/>
-    </Combination>
-    <Combination name="rel-34-updates" description="The rel-34 codeline, plus updates">
-      <Source localRoot="edk2" remote="Edk2Repo" branch="rel-34-edk2-stable202111-updates" enableSubmodule="true" />
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="rel-34-upstream-20210901-updates" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="rel-34-updates"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="rel-34-updates"/>
-    </Combination>
-
-    <!-- rel-35 -->
-    <Combination name="rel-35" description="The rel-35 codeline">
-      <Source localRoot="edk2" remote="Edk2Repo" branch="rel-35-edk2-stable202205" enableSubmodule="true" />
-      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" branch="rel-35-upstream-20220404"/>
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="rel-35-upstream-20220208" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="rel-35"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="rel-35"/>
-    </Combination>
-    <Combination name="rel-35-updates" description="The rel-35 codeline, plus updates">
-      <Source localRoot="edk2" remote="Edk2Repo" branch="rel-35-edk2-stable202205-updates" enableSubmodule="true" />
-      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" branch="rel-35-upstream-20220404"/>
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="rel-35-upstream-20220208-updates" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="rel-35-updates"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="rel-35-updates"/>
-    </Combination>
-    <Combination name="jetson-r35.1" description="The jetson-r35.1 release">
-      <Source localRoot="edk2" remote="Edk2Repo" tag="jetson-r35.1" enableSubmodule="true" />
-      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" tag="jetson-r35.1"/>
-      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" tag="jetson-r35.1" sparseCheckout="true" />
-      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" tag="jetson-r35.1"/>
-      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" tag="jetson-r35.1"/>
+    <!-- lineage-20.0 -->
+    <Combination name="lineage-20.0" description="The LineageOS 20.0 codeline">
+      <Source localRoot="edk2" remote="Edk2Repo" branch="lineage-20.0" enableSubmodule="true" />
+      <Source localRoot="edk2-non-osi" remote="Edk2NonOsiRepo" branch="lineage-20.0"/>
+      <Source localRoot="edk2-platforms" remote="Edk2PlatformsRepo" branch="lineage-20.0" sparseCheckout="true" />
+      <Source localRoot="edk2-nvidia" remote="Edk2NvidiaRepo" branch="lineage-20.0"/>
+      <Source localRoot="edk2-nvidia-non-osi" remote="Edk2NvidiaNonOsiRepo" branch="lineage-20.0"/>
     </Combination>
   </CombinationList>
 
